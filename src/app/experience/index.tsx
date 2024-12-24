@@ -9,10 +9,10 @@ const jobs: JobProps[] = [
     endDate: "Present",
     responsibilities: [
       "Responsible for the overall front end performance of Confluence Cloud", 
-      "Owned the Confluence Cloud SSR service", 
-      "Led the design and implemenentation of the React 16 to React 18 upgrade. This involved overseeing many different work streams and partnering with teams all across the organization. ",
+      "Owned the Confluence Cloud SSR service. ", 
+      "Led the design and implemenentation of the React 16 to React 18 upgrade. This involved overseeing many different work streams and partnering with teams all across the organization.",
     ],
-    technologies: ["React", "TypeScript", "HTML", "CSS", "SQL", "Splunk", "NodeJS"]
+    technologies: ["React", "TypeScript", "AWS", "HTML", "CSS", "SQL", "Splunk", "NodeJS"]
   },
   {
     title: "Software Engineer",
