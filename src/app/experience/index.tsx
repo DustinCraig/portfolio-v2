@@ -1,5 +1,8 @@
+"use client"
+
 import Job from "./job";
 import type { JobProps } from "./job";
+import { motion } from "framer-motion";
 
 const jobs: JobProps[] = [
   {
@@ -60,9 +63,18 @@ const jobs: JobProps[] = [
 export default function Experience() {
   return (
     <div>
-      <h1 className="text-4xl font-bold pb-10 underline decoration-blue-400">Experience</h1>
+      <motion.h1
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.8 }}
+        whileInView="visible"
+        className="text-4xl font-bold pb-10 underline decoration-blue-400"
+      >
+        Experience
+      </motion.h1>
       {jobs.map((job, index) => (
-        <Job key={index} {...job} />
+        <Job key={index} {...job} index={index} />
       ))}
     </div>
   )

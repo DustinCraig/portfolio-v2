@@ -1,5 +1,10 @@
+"use client"
+
+import { motion } from "framer-motion";
+
 export type JobProps = {
   title: string;
+  index?: number
   company: string;
   startDate: string;
   endDate: string;
@@ -7,9 +12,17 @@ export type JobProps = {
   technologies?: string[];
 }
 
-export default function Job({ title, company, startDate, endDate, responsibilities, technologies }: JobProps) {
+export default function Job({ title, index, company, startDate, endDate, responsibilities, technologies }: JobProps) {
   return (
-    <div className="max-w-2x mx-auto p-6">
+    <motion.div
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 1+(index || 0)*0.1 }}
+      whileInView="visible"
+      className="max-w-2x mx-auto p-6"
+      key={index}
+    >
       <div className="mb-8 border-b pb-6">
         <div className="flex justify-between items-start mb-2">
           <div>
@@ -42,6 +55,6 @@ export default function Job({ title, company, startDate, endDate, responsibiliti
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
