@@ -15,7 +15,7 @@ export default function FooterItem({
       href={href ?? "#"}
       text={text}
       image={image}
-      className="flex content-center m-20 my-0  gap-4"
+      className="flex content-center mx-10 md:mx-20 my-0  gap-4"
     />
   )
 }

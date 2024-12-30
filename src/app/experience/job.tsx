@@ -24,7 +24,7 @@ export default function Job({ title, index, company, startDate, endDate, respons
       key={index}
     >
       <div className="mb-8 border-b pb-6">
-        <div className="flex justify-between items-start mb-2">
+        <div className="flex flex-col md:flex-row justify-between items-start mb-2">
           <div>
             <h3 className="text-xl font-bold">{title}</h3>
             <h3 className="text-lg text-blue-400">{company}</h3>

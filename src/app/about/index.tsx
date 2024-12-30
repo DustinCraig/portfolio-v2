@@ -23,6 +23,7 @@ export default function About() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
+          className="hidden md:block"
         >
           <Avatar 
             src={avatarImage} 
