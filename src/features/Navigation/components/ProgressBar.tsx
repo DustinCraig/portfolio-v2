@@ -1,17 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { sections, SectionId } from "@/lib/data";
+import { sections } from "@/lib/data";
+import { useNavigation } from "../NavigationContext";
 
-type ProgressBarProps = {
-  isVisible: boolean;
-  activeSection: SectionId;
-};
-
-export default function ProgressBar({
-  isVisible,
-  activeSection,
-}: ProgressBarProps) {
+export default function ProgressBar() {
+  const { isVisible, activeSection } = useNavigation();
   const progressValue =
     (sections.findIndex((s) => s.id === activeSection) + 1) / sections.length;
 
