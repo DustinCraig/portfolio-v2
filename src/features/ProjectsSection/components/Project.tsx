@@ -5,6 +5,7 @@ import { GlassCard, TechBadge } from "@/components";
 import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
 import { CommandLineIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 
 type ProjectProps = {
   project: Project;
@@ -46,6 +47,18 @@ export default function Project({ project }: ProjectProps) {
           )}
         </div>
       </div>
+
+      {project.image && (
+        <div className="mb-4 overflow-hidden rounded-lg">
+          <Image
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            width={600}
+            height={400}
+            className="w-full h-auto object-cover transition-transform hover:scale-105 duration-300"
+          />
+        </div>
+      )}
 
       <p className="text-body mb-4 leading-relaxed">{project.description}</p>
 

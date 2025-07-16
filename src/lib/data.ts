@@ -101,6 +101,7 @@ export type Project = {
   github?: string;
   demo?: string;
   featured: boolean;
+  image?: string;
 };
 
 export const projects: Project[] = [
@@ -111,6 +112,23 @@ export const projects: Project[] = [
     tech: ["React", "Node.js", "PostgreSQL", "Electron"],
     github: "https://github.com/DustinCraig/note-term-desktop",
     featured: true,
+  },
+  {
+    title: "Paper in the Wind",
+    description:
+      "Unity game where you fly as a paper airplane in a randomly generated office environment",
+    tech: ["C#", "Unity"],
+    featured: true,
+  },
+  {
+    title: "Computer Graphics Final Project",
+    description:
+      "First person atmospheric scene created from scratch featuring water reflectance, skybox, reltime fog, multiple light sources, etc",
+    tech: ["WebGL", "JavaScript"],
+    featured: false,
+    github: "https://github.com/DustinCraig/GraphicsProject",
+    demo: "https://dustincraig.github.io/GraphicsProject/",
+    image: "/images/graphics_project.png",
   },
 ];
 
