@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { useEffect, useCallback } from "react";
 import { sections, SectionId } from "@/lib/data";
 import ProgressBar from "./components/ProgressBar";
-import KeyboardNavigationHint from "./components/KeyboardNavigationHint";
 import { NavigationProvider, useNavigation } from "./NavigationContext";
 
 function NavigationComponent() {
@@ -127,8 +126,6 @@ function NavigationComponent() {
           })}
         </div>
       </motion.nav>
-
-      <KeyboardNavigationHint />
       <ProgressBar />
     </>
   );
