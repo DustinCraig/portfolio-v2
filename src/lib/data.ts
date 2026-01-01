@@ -111,7 +111,8 @@ export const projects: Project[] = [
       "A desktop markdown-based note taking application designed for jotting down todo's, ideas, etc. note-term was styled to have a retro, minimalistic feel",
     tech: ["React", "Node.js", "PostgreSQL", "Electron"],
     github: "https://github.com/DustinCraig/note-term-desktop",
-    featured: true,
+    image: "/images/note_term.png",
+    featured: false,
   },
   {
     title: "Paper in the Wind",

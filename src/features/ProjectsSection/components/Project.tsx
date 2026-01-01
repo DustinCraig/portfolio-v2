@@ -5,7 +5,7 @@ import { GlassCard, TechBadge } from "@/components";
 import { motion } from "framer-motion";
 import { SiGithub } from "react-icons/si";
 import { CommandLineIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
+import ProjectImage from "./ProjectImage";
 
 type ProjectProps = {
   project: Project;
@@ -15,57 +15,51 @@ export default function Project({ project }: ProjectProps) {
   return (
     <GlassCard
       animation="fadeInUp"
-      className={project.featured ? "md:col-span-2" : ""}
+      className="h-full"
     >
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="text-xl font-bold text-interactive">{project.title}</h3>
-        <div className="flex gap-3">
-          {project?.github ? (
-            <motion.a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="icon-social icon-hover"
-            >
-              <SiGithub className="w-5 h-5" />
-            </motion.a>
-          ) : (
-            <></>
-          )}
+      <div className="flex flex-col h-full">
+        <ProjectImage src={project.image} title={project.title} />
 
-          {project?.demo ? (
-            <motion.a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted hover:text-primary icon-hover"
-            >
-              <CommandLineIcon className="w-5 h-5" />
-            </motion.a>
-          ) : (
-            <></>
-          )}
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+            {project.title}
+          </h3>
+          <div className="flex gap-4">
+            {project?.github && (
+              <motion.a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-social icon-hover opacity-60 hover:opacity-100"
+                aria-label="GitHub Repository"
+              >
+                <SiGithub className="w-5 h-5" />
+              </motion.a>
+            )}
+
+            {project?.demo && (
+              <motion.a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted hover:text-primary icon-hover opacity-60 hover:opacity-100"
+                aria-label="Live Demo"
+              >
+                <CommandLineIcon className="w-5 h-5" />
+              </motion.a>
+            )}
+          </div>
         </div>
-      </div>
 
-      {project.image && (
-        <div className="mb-4 overflow-hidden rounded-lg">
-          <Image
-            src={project.image}
-            alt={`${project.title} screenshot`}
-            width={600}
-            height={400}
-            className="w-full h-auto object-cover transition-transform hover:scale-105 duration-300"
-          />
+        <p className="text-body mb-6 leading-relaxed flex-grow">
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+          {project.tech.map((tech, i) => (
+            <TechBadge key={i} tech={tech} variant="project" />
+          ))}
         </div>
-      )}
-
-      <p className="text-body mb-4 leading-relaxed">{project.description}</p>
-
-      <div className="flex flex-wrap gap-2">
-        {project.tech.map((tech, i) => (
-          <TechBadge key={i} tech={tech} variant="project" />
-        ))}
       </div>
     </GlassCard>
   );
