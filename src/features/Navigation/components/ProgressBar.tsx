@@ -17,7 +17,7 @@ export default function ProgressBar() {
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       <motion.div
-        className="h-full bg-gradient-to-r from-blue-500 to-green-500"
+        className="h-full bg-primary"
         initial={{ scaleX: 0 }}
         animate={{ scaleX: progressValue }}
         transition={{

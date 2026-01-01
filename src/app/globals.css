@@ -34,7 +34,6 @@
   --terminal-yellow: #ffbd2e;
   --terminal-green: #27ca3f;
 
-  /* Semantic colors */
   --text-primary: #3b82f6;
   --text-accent: #10b981;
   --text-muted: #9ca3af;
@@ -42,13 +41,11 @@
   --text-interactive: #d1d5db;
   --text-interactive-hover: #ffffff;
 
-  /* Glass morphism */
-  --glass-bg: rgba(17, 17, 17, 0.8);
+  --glass-bg: #151515;
   --glass-border: rgba(255, 255, 255, 0.1);
-  --glass-hover-bg: rgba(31, 41, 55, 0.3);
-  --glass-hover-border: rgba(59, 130, 246, 0.2);
+  --glass-hover-bg: #1a1a1a;
+  --glass-hover-border: var(--primary);
 
-  /* Button colors */
   --btn-primary-bg: #2563eb;
   --btn-primary-hover: #1d4ed8;
   --btn-secondary-border: #4b5563;
@@ -58,22 +55,19 @@
   --btn-ghost-text: #9ca3af;
   --btn-ghost-hover-bg: rgba(31, 41, 55, 0.5);
 
-  /* Badge colors */
-  --badge-default-bg: rgba(31, 41, 55, 0.5);
+  --badge-default-bg: #1a1a1a;
   --badge-default-text: #d1d5db;
-  --badge-default-border: #4b5563;
-  --badge-project-bg: rgba(59, 130, 246, 0.2);
+  --badge-default-border: #333333;
+  --badge-project-bg: rgba(59, 130, 246, 0.1);
   --badge-project-text: #93c5fd;
-  --badge-project-border: rgba(59, 130, 246, 0.3);
-  --badge-accent-bg: rgba(16, 185, 129, 0.2);
+  --badge-project-border: rgba(59, 130, 246, 0.2);
+  --badge-accent-bg: rgba(16, 185, 129, 0.1);
   --badge-accent-text: #6ee7b7;
-  --badge-accent-border: rgba(16, 185, 129, 0.3);
+  --badge-accent-border: rgba(16, 185, 129, 0.2);
 
-  /* Social icon colors */
   --icon-social: #9ca3af;
   --icon-social-hover: #ffffff;
 
-  /* Shadow colors */
   --shadow-glow: rgba(59, 130, 246, 0.3);
   --shadow-glow-hover: rgba(59, 130, 246, 0.5);
   --shadow-card: rgba(59, 130, 246, 0.1);
@@ -89,7 +83,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Enhanced smooth scrolling for better performance */
 @media (prefers-reduced-motion: no-preference) {
   html {
     scroll-behavior: smooth;
@@ -105,7 +98,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -123,20 +115,13 @@ body {
   background: var(--primary);
 }
 
-/* Code font for specific elements */
 .font-mono {
   font-family: "JetBrains Mono", "Fira Code", "Source Code Pro", monospace;
 }
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.accent-text {
+  color: var(--primary);
 }
 
-/* Glass morphism effect */
 .glass {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
@@ -144,7 +129,6 @@ body {
   border: 1px solid var(--glass-border);
 }
 
-/* Enhanced glass effect for cards */
 .glass-enhanced {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
@@ -158,8 +142,7 @@ body {
   border-color: var(--glass-hover-border);
 }
 
-/* Button utilities */
-.btn-base {
+  .btn-base {
   @apply flex items-center gap-2 px-6 py-3 rounded-lg transition-all duration-300 font-semibold cursor-pointer;
 }
 
@@ -263,7 +246,6 @@ body {
   color: var(--text-interactive-hover);
 }
 
-/* Card utilities */
 .card-base {
   @apply rounded-lg p-6 md:p-8 transition-all duration-300;
 }
@@ -277,7 +259,6 @@ body {
   box-shadow: 0 20px 40px var(--shadow-card);
 }
 
-/* Terminal prompt utilities */
 .terminal-prompt {
   color: var(--text-primary);
 }
@@ -294,7 +275,6 @@ body {
   color: var(--terminal-yellow);
 }
 
-/* Code block styling */
 .code-block {
   background: var(--code-bg);
   color: var(--code-text);
@@ -306,7 +286,6 @@ body {
   overflow-x: auto;
 }
 
-/* Floating animation */
 @keyframes float {
   0%,
   100% {
@@ -321,7 +300,6 @@ body {
   animation: float 3s ease-in-out infinite;
 }
 
-/* Glow effect */
 .glow {
   box-shadow: 0 0 20px var(--shadow-glow);
 }
@@ -330,7 +308,6 @@ body {
   box-shadow: 0 0 30px var(--shadow-glow-hover);
 }
 
-/* List item styling */
 .list-item {
   @apply flex items-start gap-3;
   color: var(--text-body);
@@ -341,7 +318,6 @@ body {
   @apply mt-2;
 }
 
-/* Section utilities */
 .section-base {
   @apply py-10 px-6;
 }
@@ -354,7 +330,6 @@ body {
   @apply container mx-auto max-w-4xl;
 }
 
-/* Terminal-like styling */
 .terminal {
   background: var(--terminal-bg);
   border: 1px solid var(--terminal-border);
@@ -393,7 +368,6 @@ body {
   font-size: 0.875rem;
 }
 
-/* Animation utilities */
 .animate-scale-hover {
   @apply transition-transform duration-300 hover:scale-105;
 }
@@ -406,15 +380,13 @@ body {
   box-shadow: 0 0 30px var(--shadow-glow-hover);
 }
 
-/* Focus states */
-.focus-ring {
+.focus-ring { 
   @apply focus:outline-none focus:ring-2 focus:ring-opacity-50;
   --tw-ring-color: var(--primary);
 }
 
-/* Responsive utilities */
 @media (max-width: 768px) {
-  .gradient-text {
+  .accent-text {
     font-size: 2rem;
   }
 

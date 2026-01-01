@@ -10,7 +10,7 @@ import {
   staggerItem,
   blinkingCursor,
 } from "@/lib/animations";
-import { GradientText, TechBadge } from "@/components/";
+import { AccentText, TechBadge } from "@/components/";
 
 export default function HeroSection() {
   const [typedText, setTypedText] = useState("");
@@ -50,9 +50,7 @@ export default function HeroSection() {
         >
           <div className="w-32 h-32 mx-auto mb-8 relative">
             <motion.div
-              className="w-full h-full rounded-full bg-gradient-to-r from-blue-500 to-green-500 p-1"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity }}
+              className="w-full h-full rounded-full border-2 border-primary p-1"
             >
               <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
                 <CodeBracketIcon className="w-16 h-16 text-white" />
@@ -65,7 +63,7 @@ export default function HeroSection() {
           {...fadeInUp}
           className="text-6xl md:text-8xl font-bold mb-6"
         >
-          <GradientText>Hi, I&apos;m</GradientText>{" "}
+          <AccentText>Hi, I&apos;m</AccentText>{" "}
           <span className="text-white">{personalInfo.name}</span>
         </motion.h1>
 

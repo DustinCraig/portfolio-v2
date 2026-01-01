@@ -24,7 +24,7 @@ export default function SectionHeader({
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
         {title}
       </h2>
-      <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-green-500 mx-auto mb-4"></div>
+      <div className="w-24 h-1 bg-primary mx-auto mb-4"></div>
       {subtitle && <p className="text-gray-400 text-lg">{subtitle}</p>}
     </motion.div>
   );
